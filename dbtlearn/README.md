@@ -4,6 +4,9 @@
 #### Terminal Commands:
 - dbt run
 - dbt test
+- dbt run --full-refresh 
+    - will rebuild every incremental table
+    - use when src schema has been changed
 
 
 ### External Resources:
