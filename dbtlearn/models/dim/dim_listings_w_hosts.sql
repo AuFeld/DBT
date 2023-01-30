@@ -1,14 +1,14 @@
--- join tables
+-- join tables and create cte's l & h
 WITH
 l AS (
     SELECT
         *
     FROM
-        {{ ref('dim_listings_cleansed') }}
+        {{ ref('dim_listings_cleaned') }}
 ),
 h AS (
     SELECT * 
-    FROM {{ ref('dim_hosts_cleansed') }}
+    FROM {{ ref('dim_hosts_cleaned') }}
 )
 
 SELECT 
