@@ -1,0 +1,21 @@
+version: 2
+
+# providing aliases to tables in snowflake
+sources:
+  - name: airbnb
+    schema: raw
+    tables:
+      # alias name
+      - name: listings
+        # table name in snowflake
+        identifier: raw_listings
+
+      - name: hosts
+        identifier: raw_hosts
+
+      - name: reviews
+        identifier: raw_reviews
+        loaded_at_field: date
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24, period: hour}
