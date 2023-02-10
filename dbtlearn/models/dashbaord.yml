@@ -1,7 +1,7 @@
 version: 2
 
 exposures:
-  - name: Airbnb Dashboard
+  - name: Airbnb_Dashboard
     type: dashboard
     maturity: low
     url: https://7e942fbd.us2a.app.preset.io:443/r/2
@@ -10,7 +10,7 @@ exposures:
 
     depends_on:
       - ref('dim_listings_w_hosts')
-      - ref('mart_fullmoon_reviews')
+      - ref('mart_full_moon_reviews')
 
     owner:
       name: chase goldfeld
