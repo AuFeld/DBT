@@ -53,6 +53,11 @@ models:
           - accepted_values:
               values: ['t', 'f']
   
+  - name: dim_listings_w_hosts
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('airbnb', 'listings')
+
   - name: fct_reviews
     columns:
       - name: listing_id
